@@ -48,7 +48,7 @@ library
     -- Modules exported by the library.
     exposed-modules: 
         MyLib, 
-        DayOne
+        DayOne.ProblemOne
 
     -- Modules included in this library but not exported.
     -- other-modules:
@@ -95,7 +95,7 @@ test-suite Advent2022-test
 
     -- Directories containing source files.
     hs-source-dirs:
-        test
+        test, test/DayOne
 
     -- The entrypoint to the test suite.
     main-is:          MyLibTest.hs
@@ -103,3 +103,6 @@ test-suite Advent2022-test
     -- Test dependencies.
     build-depends:
         base ^>=4.16.3.0, HUnit, Advent2022
+
+    other-modules:
+        DayOne.ProblemOneTests
