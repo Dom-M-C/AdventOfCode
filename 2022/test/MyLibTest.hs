@@ -3,8 +3,12 @@ module Main (main) where
 import Test.HUnit
 import System.Exit
 import DayOne.ProblemOneTests(dayOneProblemOneTests)
+import DayOne.ProblemTwoTests(dayOneProblemTwoTests)
 
-tests = dayOneProblemOneTests
+tests :: Test
+tests = TestList 
+  $  dayOneProblemOneTests
+  <> dayOneProblemTwoTests
 
 main :: IO Counts
 main = do

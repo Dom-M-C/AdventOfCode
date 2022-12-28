@@ -1,18 +1,19 @@
-module DayOne.ProblemOneTests (dayOneProblemOneTests) where
+module DayOne.ProblemOneTests (dayOneProblemOneTests, dayOneTestInput) where
 
 import Test.HUnit
 import DayOne.ProblemOne (getElvesCalories)
 
-dayOneProblemOneTests = TestList 
-  [ TestLabel "givenElves_whenCheckingFirstElfCalories_then6000" givenElves_whenCheckingFirstElfCalories_then6000
-  , TestLabel "givenElves_whenCheckingSecondElfCalories_then4000" givenElves_whenCheckingSecondElfCalories_then4000
-  , TestLabel "givenElves_whenCheckingThirdElfCalories_then11000" givenElves_whenCheckingThirdElfCalories_then11000
-  , TestLabel "givenElves_whenCheckingFourthElfCalories_then24000" givenElves_whenCheckingFourthElfCalories_then24000
-  , TestLabel "givenElves_whenCheckingFifthElfCalories_then10000" givenElves_whenCheckingFifthElfCalories_then10000
+dayOneProblemOneTests :: [Test]
+dayOneProblemOneTests =  
+  [ givenElves_whenCheckingFirstElfCalories_then6000
+  , givenElves_whenCheckingSecondElfCalories_then4000
+  , givenElves_whenCheckingThirdElfCalories_then11000
+  , givenElves_whenCheckingFourthElfCalories_then24000
+  , givenElves_whenCheckingFifthElfCalories_then10000
   ]
 
-dayOneProblemOneTestInput :: String
-dayOneProblemOneTestInput = unlines 
+dayOneTestInput :: String
+dayOneTestInput = unlines 
   [   "1000"
   ,   "2000"
   ,   "3000"
@@ -29,9 +30,10 @@ dayOneProblemOneTestInput = unlines
   ,   "10000"
   ]
 
+givenElves_whenCheckingFirstElfCalories_then6000 :: Test
 givenElves_whenCheckingFirstElfCalories_then6000 = 
   let
-    firstElfCalories = head $ getElvesCalories dayOneProblemOneTestInput
+    firstElfCalories = head $ getElvesCalories dayOneTestInput
   in
     TestCase(
       assertEqual 
@@ -40,9 +42,10 @@ givenElves_whenCheckingFirstElfCalories_then6000 =
         6000
       )
 
+givenElves_whenCheckingSecondElfCalories_then4000 :: Test
 givenElves_whenCheckingSecondElfCalories_then4000 =
   let
-    firstElfCalories = getElvesCalories dayOneProblemOneTestInput !! 1
+    firstElfCalories = getElvesCalories dayOneTestInput !! 1
   in
     TestCase(
       assertEqual 
@@ -51,9 +54,10 @@ givenElves_whenCheckingSecondElfCalories_then4000 =
         4000
       )
 
+givenElves_whenCheckingThirdElfCalories_then11000 :: Test
 givenElves_whenCheckingThirdElfCalories_then11000 =
   let
-    firstElfCalories = getElvesCalories dayOneProblemOneTestInput !! 2
+    firstElfCalories = getElvesCalories dayOneTestInput !! 2
   in
     TestCase(
       assertEqual 
@@ -62,9 +66,10 @@ givenElves_whenCheckingThirdElfCalories_then11000 =
         11000
       )
 
+givenElves_whenCheckingFourthElfCalories_then24000 :: Test
 givenElves_whenCheckingFourthElfCalories_then24000 =
   let
-    firstElfCalories = getElvesCalories dayOneProblemOneTestInput !! 3
+    firstElfCalories = getElvesCalories dayOneTestInput !! 3
   in
     TestCase(
       assertEqual 
@@ -73,9 +78,10 @@ givenElves_whenCheckingFourthElfCalories_then24000 =
         24000
       )
 
+givenElves_whenCheckingFifthElfCalories_then10000 :: Test
 givenElves_whenCheckingFifthElfCalories_then10000 =
   let
-    firstElfCalories = getElvesCalories dayOneProblemOneTestInput !! 4
+    firstElfCalories = getElvesCalories dayOneTestInput !! 4
   in
     TestCase(
       assertEqual 
