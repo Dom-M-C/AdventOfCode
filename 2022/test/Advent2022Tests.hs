@@ -4,11 +4,13 @@ import Test.HUnit
 import System.Exit
 import DayOne.ProblemOneTests(dayOneProblemOneTests)
 import DayOne.ProblemTwoTests(dayOneProblemTwoTests)
+import DayTwo.ProblemOneTests(dayTwoProblemOneTests)
 
 tests :: Test
 tests = TestList 
   $  dayOneProblemOneTests
   <> dayOneProblemTwoTests
+  <> dayTwoProblemOneTests
 
 main :: IO Counts
 main = do

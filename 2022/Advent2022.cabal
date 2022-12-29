@@ -49,7 +49,8 @@ library
     -- Modules exported by the library.
     exposed-modules: 
         DayOne.ProblemOne,
-        DayOne.ProblemTwo
+        DayOne.ProblemTwo,
+        DayTwo.ProblemOne
 
     -- Modules included in this library but not exported.
     -- other-modules: Paths_Advent2022
@@ -99,7 +100,7 @@ test-suite Advent2022-test
         test
 
     -- The entrypoint to the test suite.
-    main-is:          MyLibTest.hs
+    main-is:          Advent2022Tests.hs
 
     -- Test dependencies.
     build-depends:
@@ -107,4 +108,5 @@ test-suite Advent2022-test
 
     other-modules:
         DayOne.ProblemOneTests,
-        DayOne.ProblemTwoTests
+        DayOne.ProblemTwoTests,
+        DayTwo.ProblemOneTests
