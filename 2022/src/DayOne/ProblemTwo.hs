@@ -17,6 +17,6 @@ sumTopThreeElvenCalories = sum
   . getElvesCalories
 
 -- https://ro-che.info/articles/2016-04-02-descending-sort-haskell
--- sortBy performs better than sortOn when caching not use
+-- sortBy performs better than sortOn when caching not used
 sortDesc :: [Int] -> [Int]
 sortDesc = sortBy (comparing Down)
