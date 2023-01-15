@@ -47,13 +47,14 @@ data-files: data/
 
 library
     -- Modules exported by the library.
-    exposed-modules: 
+    exposed-modules:
         DayOne.ProblemOne,
         DayOne.ProblemTwo,
-        DayTwo.ProblemOne
+        DayTwo.ProblemOne,
+        DayTwo.ProblemTwo
 
     -- Modules included in this library but not exported.
-    -- other-modules: Paths_Advent2022
+    other-modules: DayTwo.Shared
 
     -- LANGUAGE extensions used by modules in this package.
     -- other-extensions:
@@ -109,4 +110,5 @@ test-suite Advent2022-test
     other-modules:
         DayOne.ProblemOneTests,
         DayOne.ProblemTwoTests,
-        DayTwo.ProblemOneTests
+        DayTwo.ProblemOneTests,
+        DayTwo.ProblemTwoTests
