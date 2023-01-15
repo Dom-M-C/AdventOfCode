@@ -4,11 +4,15 @@ import Test.HUnit
 import System.Exit
 import DayOne.ProblemOneTests(dayOneProblemOneTests)
 import DayOne.ProblemTwoTests(dayOneProblemTwoTests)
+import DayTwo.ProblemOneTests(dayTwoProblemOneTests)
+import DayTwo.ProblemTwoTests(dayTwoProblemTwoTests)
 
 tests :: Test
 tests = TestList 
   $  dayOneProblemOneTests
   <> dayOneProblemTwoTests
+  <> dayTwoProblemOneTests
+  <> dayTwoProblemTwoTests
 
 main :: IO Counts
 main = do
@@ -18,4 +22,3 @@ main = do
       exitSuccess
     else
       exitWith (ExitFailure 1)
-

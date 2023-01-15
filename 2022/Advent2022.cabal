@@ -47,12 +47,14 @@ data-files: data/
 
 library
     -- Modules exported by the library.
-    exposed-modules: 
+    exposed-modules:
         DayOne.ProblemOne,
-        DayOne.ProblemTwo
+        DayOne.ProblemTwo,
+        DayTwo.ProblemOne,
+        DayTwo.ProblemTwo
 
     -- Modules included in this library but not exported.
-    -- other-modules: Paths_Advent2022
+    other-modules: DayTwo.Shared
 
     -- LANGUAGE extensions used by modules in this package.
     -- other-extensions:
@@ -99,7 +101,7 @@ test-suite Advent2022-test
         test
 
     -- The entrypoint to the test suite.
-    main-is:          MyLibTest.hs
+    main-is:          Advent2022Tests.hs
 
     -- Test dependencies.
     build-depends:
@@ -107,4 +109,6 @@ test-suite Advent2022-test
 
     other-modules:
         DayOne.ProblemOneTests,
-        DayOne.ProblemTwoTests
+        DayOne.ProblemTwoTests,
+        DayTwo.ProblemOneTests,
+        DayTwo.ProblemTwoTests
