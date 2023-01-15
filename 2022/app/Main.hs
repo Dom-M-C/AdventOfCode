@@ -4,36 +4,31 @@ import Paths_Advent2022
 import DayOne.ProblemOne (dayOneProblemOneSolution)
 import DayOne.ProblemTwo (dayOneProblemTwoSolution)
 import DayTwo.ProblemOne (dayTwoProblemOneSolution)
+import DayTwo.ProblemTwo (dayTwoProblemTwoSolution)
 
 main :: IO ()
-main = dayOneProblemOne 
-  >> dayOneProblemTwo
-  >> dayTwoProblemOne
+main = mapM_ solveProblem problems
 
-dayOneInput :: IO String
-dayOneInput = readDataFile "data/day_one.txt"
+data Problem = Problem
+  { problemDay :: String
+  , problemNum :: String
+  , problemInput :: FilePath
+  , problemSolution :: String -> String
+  }
 
-dayOneProblemOne :: IO ()
-dayOneProblemOne = do
-  input <- dayOneInput
-  let maxCalories = dayOneProblemOneSolution input
-  putStrLn $ "day one, problem one: " <> maxCalories
+problems :: [Problem]
+problems =
+  [ Problem "one" "one" "data/day_one.txt" dayOneProblemOneSolution
+  , Problem "one" "two" "data/day_one.txt" dayOneProblemTwoSolution
+  , Problem "two" "one" "data/day_two.txt" dayTwoProblemOneSolution
+  , Problem "two" "two" "data/day_two.txt" dayTwoProblemTwoSolution
+  ]
 
-dayOneProblemTwo :: IO ()
-dayOneProblemTwo = do
-  input <- dayOneInput
-  let topThreeCaloriesSum = dayOneProblemTwoSolution input
-  putStrLn $ "day one, problem two: " <> topThreeCaloriesSum
-
-dayTwoInput :: IO String
-dayTwoInput = readDataFile "data/day_two.txt"
-
-dayTwoProblemOne :: IO ()
-dayTwoProblemOne = do
-  input <- dayTwoInput
-  let totalScore = dayTwoProblemOneSolution input
-  putStrLn $ "day two, problem one: " <> show totalScore
+solveProblem :: Problem -> IO ()
+solveProblem (Problem day problem path solution) = do
+  input <- readDataFile path
+  let output = solution input
+  putStrLn $ "day " <> day <> ", problem " <> problem <> ": " <> output
 
 readDataFile :: FilePath -> IO String
 readDataFile fileName = getDataFileName fileName >>= readFile 
-
