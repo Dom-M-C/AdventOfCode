@@ -1,28 +1,31 @@
-module DayThree.ProblemOneTests where
+module DayThree.ProblemThreeTests where
 
 import Test.HUnit
 import DayThree.ProblemOne( )
 
 dayThreeTestInput :: String
 dayThreeTestInput = unlines
-  [ "A Y"
-  , "B X"
-  , "C Z"
+  [ "vJrwpWtwJgWrhcsFMMfFFhFp"
+  , "jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL"
+  , "PmmdzqPrVvPwwTWBwg"
+  , "wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn"
+  , "ttgJtRGJQctTZtZT"
+  , "CrZsJsPPZsGzwwsLwLmpwMDw"
   ]
 
-dayTwoProblemOneTests :: [Test]
-dayTwoProblemOneTests =  
+dayThreeProblemOneTests :: [Test]
+dayThreeProblemOneTests =
   let
-    allMoves = playAllMoves dayTwoTestInput
+    allRucksacks = getAllRucksacks dayTwoTestInput
 
-    givenRockVsPaper_whenPlayRockPaperScissors_thenScore8 =
-      head allMoves
+    givenFirstRucksack_whenComparingItems_thenBothContainP =
+      head allRucksacks
 
     givenPaperVsRock_whenPlayRockPaperScissors_thenScore1 =
-      allMoves !! 1
+      allRucksacks !! 1
 
     givenScissorsVsScissors_whenPlayRockPaperScissors_thenScore6 =
-      allMoves !! 2
+      allRucksacks !! 2
   in
     [ TestCase(
         assertEqual
