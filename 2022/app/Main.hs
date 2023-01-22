@@ -5,6 +5,7 @@ import DayOne.ProblemOne (dayOneProblemOneSolution)
 import DayOne.ProblemTwo (dayOneProblemTwoSolution)
 import DayTwo.ProblemOne (dayTwoProblemOneSolution)
 import DayTwo.ProblemTwo (dayTwoProblemTwoSolution)
+import DayThree.ProblemOne (dayThreeProblemOneSolution)
 
 main :: IO ()
 main = mapM_ solveProblem problems
@@ -22,6 +23,7 @@ problems =
   , Problem "one" "two" "data/day_one.txt" dayOneProblemTwoSolution
   , Problem "two" "one" "data/day_two.txt" dayTwoProblemOneSolution
   , Problem "two" "two" "data/day_two.txt" dayTwoProblemTwoSolution
+  , Problem "three" "one" "data/day_three.txt" dayThreeProblemOneSolution
   ]
 
 solveProblem :: Problem -> IO ()

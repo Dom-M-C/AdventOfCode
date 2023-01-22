@@ -6,6 +6,7 @@ import DayOne.ProblemOneTests(dayOneProblemOneTests)
 import DayOne.ProblemTwoTests(dayOneProblemTwoTests)
 import DayTwo.ProblemOneTests(dayTwoProblemOneTests)
 import DayTwo.ProblemTwoTests(dayTwoProblemTwoTests)
+import DayThree.ProblemOneTests(dayThreeProblemOneTests)
 
 tests :: Test
 tests = TestList 
@@ -13,6 +14,7 @@ tests = TestList
   <> dayOneProblemTwoTests
   <> dayTwoProblemOneTests
   <> dayTwoProblemTwoTests
+  <> dayThreeProblemOneTests
 
 main :: IO Counts
 main = do

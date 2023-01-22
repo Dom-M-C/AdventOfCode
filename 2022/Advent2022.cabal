@@ -51,7 +51,8 @@ library
         DayOne.ProblemOne,
         DayOne.ProblemTwo,
         DayTwo.ProblemOne,
-        DayTwo.ProblemTwo
+        DayTwo.ProblemTwo,
+        DayThree.ProblemOne
 
     -- Modules included in this library but not exported.
     other-modules: DayTwo.Shared
@@ -111,4 +112,5 @@ test-suite Advent2022-test
         DayOne.ProblemOneTests,
         DayOne.ProblemTwoTests,
         DayTwo.ProblemOneTests,
-        DayTwo.ProblemTwoTests
+        DayTwo.ProblemTwoTests,
+        DayThree.ProblemOneTests
